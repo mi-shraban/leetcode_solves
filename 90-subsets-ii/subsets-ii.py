@@ -9,3 +9,4 @@ class Solution:
                     temp.append(subset + [x])
             subsets.extend(temp)
         return subsets
+        
