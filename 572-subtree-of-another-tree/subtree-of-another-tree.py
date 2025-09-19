@@ -13,7 +13,6 @@ class Solution:
         if self.isSameTree(root, subRoot):
             return True
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-
     def isSameTree(self, p, q):
         # >> DFS
         if not p and not q:
