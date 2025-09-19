@@ -10,4 +10,3 @@ class Solution:
         #inplace reverse
         for i in range(len(matrix)):
             matrix[i]  = matrix[i][::-1]
-        
