@@ -12,13 +12,10 @@ class Solution:
                 ans[i] = nums[e]*nums[e]
                 e -= 1
         return ans
-        #   ^^^
         # # O(n), O(n)
-
         # ans = [num*num for num in nums]
         # ans.sort()
         # return ans
         #   ^^^
         # O(nlogn), O(n)  But somehow, this gets a faster runtime ;-; !
-
         # TimeComplexit, SpaceComplexity
