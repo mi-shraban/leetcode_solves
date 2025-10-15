@@ -7,3 +7,13 @@ class Solution(object):
                 return i, num_dict[diff]
             num_dict[nums[i]] = i
         return None
+        # for sorted arrays only ;-;
+        # l, r = 0, len(nums)-1
+        # while l < r:
+        #     if nums[l] + nums[r] == target:
+        #         return [l, r]
+        #     elif nums[l] + nums[r] > target:
+        #         r -= 1
+        #     elif nums[l] + nums[r] < target:
+        #         l += 1
+        # return -1
