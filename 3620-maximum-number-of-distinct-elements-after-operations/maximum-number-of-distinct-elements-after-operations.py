@@ -1,17 +1,17 @@
 class Solution:
     def maxDistinctElements(self, nums: List[int], k: int) -> int:
         nums.sort()
-        lp = -10**9+7
+        curr = -10**9+7
         cnt = 0
         for x in nums:
-            lb = x - k
-            ub = x + k
-            if lp < lb:
-                lp = lb
+            lb = x - k      # lowerbound
+            ub = x + k      # upperbound
+            if curr < lb:
+                curr = lb
             else:
-                lp += 1
-            if lp <= ub:
+                curr += 1
+            if curr <= ub:
                 cnt += 1
             else:
-                lp -= 1
+                curr -= 1
         return cnt
