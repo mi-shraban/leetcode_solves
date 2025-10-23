@@ -1,13 +1,12 @@
 class Solution:
     def hasSameDigits(self, s: str) -> bool:
-        digs = [int(x) for x in s]
-        while len(digs) > 2:
-            newdigs = []
-            for i in range(0, len(digs)-1):
-                if i + 1 < len(digs):
-                    pair = (digs[i] + digs[i+1]) % 10
+        while len(s) > 2:
+            newS = []
+            for i in range(0, len(s)-1):
+                if i + 1 < len(s):
+                    pair = (int(s[i]) + int(s[i+1])) % 10
                 else:
-                    pair = digs[i] % 10
-                newdigs.append(pair)
-            digs = newdigs
-        return digs[0] == digs[1]
+                    pair = int(s[i]) % 10
+                newS.append(pair)
+            s = newS
+        return s[0] == s[1]
