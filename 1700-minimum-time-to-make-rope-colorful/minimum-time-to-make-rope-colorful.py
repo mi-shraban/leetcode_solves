@@ -5,6 +5,12 @@ class Solution:
         for i in range(n):
             if i > 0 and colors[i] != colors[i-1]:
                 curr = 0
-            ans += min(curr, neededTime[i])
-            curr = max(curr, neededTime[i])         # keeps track of the highest time in a consecutive color stretch ;-;
+            if neededTime[i] >= curr:
+                ans += curr
+            elif curr > neededTime[i]:
+                ans += neededTime[i]
+            if neededTime[i] >= curr:            # keeps track of the highest time in a consecutive color stretch ;-;
+                curr = neededTime[i]
+            elif curr > neededTime[i]:
+                curr = curr
         return ans
