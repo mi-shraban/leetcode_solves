@@ -3,7 +3,6 @@ class Solution:
         n = len(nums)
         ans = n
         for i in range(n):
-            nums[i] = nums[i] % 3
-            if nums[i] == 0:
+            if nums[i] % 3 == 0:
                 ans -= 1
         return ans
