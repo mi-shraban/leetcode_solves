@@ -6,6 +6,8 @@ class Solution:
             ht[y] += 1
         ans = total = 0
         for y, cnt in ht.items():
+            if cnt < 2:
+                continue
             lines = cnt * (cnt - 1) // 2
             ans = (ans + total * lines) % mod
             total = (total + lines) % mod
