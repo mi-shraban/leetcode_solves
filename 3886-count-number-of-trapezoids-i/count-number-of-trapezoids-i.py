@@ -1,9 +1,9 @@
 class Solution:
     def countTrapezoids(self, points: List[List[int]]) -> int:
         mod = 10**9+7
-        ht = {y:0 for x, y in points}
+        ht = {}
         for x, y in points:
-            ht[y] += 1
+            ht[y] = ht.get(y, 0) + 1
         ans = total = 0
         for y, cnt in ht.items():
             if cnt < 2:
