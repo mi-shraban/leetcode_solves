@@ -6,8 +6,7 @@ class Solution:
         n = len(nums)
         ans = 0
         for i in range(n-1):
-            l_sum = pref[i]
-            r_sum = pref[n - 1] - pref[i]
-            if (l_sum - r_sum) % 2 == 0:
+            diff = pref[i] - (pref[n - 1] - pref[i])
+            if diff % 2 == 0:
                 ans += 1
         return ans
