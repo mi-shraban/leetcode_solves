@@ -3,13 +3,12 @@ class Solution:
         mentions = [0] * n
         online = [0] * n
         events.sort(key=lambda x: (int(x[1]), x[0] == "MESSAGE"))
-        print(events)
+        all_mentioned = 0
         for e, t, a in events:
             t = int(t)
             if  e == "MESSAGE":
                 if a == "ALL":
-                    for i in range(n):
-                        mentions[i] += 1
+                    all_mentioned += 1
                 elif a == "HERE":
                     for i in range(n):
                         if online[i] <= t:
@@ -21,4 +20,6 @@ class Solution:
             else:
                 a = int(a)
                 online[a] = t + 60
+        for i in range(n):
+            mentions[i] += all_mentioned
         return mentions
