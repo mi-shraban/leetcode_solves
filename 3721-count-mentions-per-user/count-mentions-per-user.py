@@ -14,8 +14,9 @@ class Solution:
                         if online[i] <= t:
                             mentions[i] += 1
                 else:
-                    for x in a.split(' '):
-                        mentions[int(x[2:])] += 1
+                    a = [int(x[2:]) for x in a.split(' ')]
+                    for x in a:
+                        mentions[x] += 1
             else:
                 a = int(a)
                 online[a] = t + 60
