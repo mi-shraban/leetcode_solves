@@ -2,7 +2,8 @@ class Solution:
     def getDescentPeriods(self, prices: List[int]) -> int:
         ans = 1
         cnt = 1
-        for i in range(len(prices) - 1):
+        n = len(prices)
+        for i in range(n - 1):
             if prices[i] - prices[i + 1] == 1:
                 cnt += 1
             else:
