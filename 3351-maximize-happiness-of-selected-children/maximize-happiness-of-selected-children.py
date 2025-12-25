@@ -4,6 +4,6 @@ class Solution:
         ans = 0
         for i in range(k):
             if happiness[i] - i <= 0:
-                return ans
+                break
             ans += happiness[i] - i
         return ans
